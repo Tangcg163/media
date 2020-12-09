@@ -1,0 +1,31 @@
+server:
+  port: 50520
+  servlet:
+    context-path: /
+  tomcat:
+    max-threads: 1000
+    min-spare-threads: 30
+    uri-encoding: UTF-8
+
+spring:
+  application:
+    name: media-test
+  http:
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true
+    jackson:
+      date-format: yyyy-MM-dd HH:mm:ss
+      time-zone: GMT+8
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8520/eureka/
+  instance:
+    lease-renewal-interval-in-seconds: 10
+    lease-expiration-duration-in-seconds: 30
+    instance-id: ${spring.cloud.client.ip-address}:${server.port}
+    hostname: ${spring.cloud.client.ip-address}
+    prefer-ip-address: true

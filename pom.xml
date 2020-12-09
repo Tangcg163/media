@@ -11,6 +11,7 @@
     <modules>
         <module>media-test</module>
         <module>media-common</module>
+        <module>media-registry</module>
     </modules>
 
     <parent>
